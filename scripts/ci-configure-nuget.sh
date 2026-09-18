@@ -2,12 +2,12 @@
 set -euo pipefail
 
 if [[ -z "${NUGET_AUTH_TOKEN:-}" ]]; then
-  echo "NUGET_AUTH_TOKEN is required to restore Yaref92.Events from GitHub Packages." >&2
+  echo "NUGET_AUTH_TOKEN is required to restore FullHouse.Events from GitHub Packages." >&2
   exit 1
 fi
 
 source_name="github"
-source_url="https://nuget.pkg.github.com/yaron-E92/index.json"
+source_url="https://nuget.pkg.github.com/FullHouseDevelopment/index.json"
 
 if dotnet nuget list source | grep -Fq "${source_name}"; then
   dotnet nuget update source "${source_name}" \
